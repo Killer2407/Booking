@@ -1,8 +1,10 @@
 const User = require("../model/User.js");
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken")
 
 const register = async (req, res, next) => {
     try {
+        console.log("hit")
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
         const newUser = new User({
@@ -15,12 +17,14 @@ const register = async (req, res, next) => {
         res.status(200).json("User is created")
 
     } catch (err) {
+        console.log(err)
         next(err);
     }
 }
 
 const login = async (req, res, next) => {
     try {
+        console.log('Hello')
         const user = await User.findOne({ username: req.body.username })
         if (!user) return next(createError(404, "User not found!"))
 
@@ -34,7 +38,9 @@ const login = async (req, res, next) => {
             httpOnly: true,
         }).status(200).json({ ...otherDetails })
     } catch (err) {
+        console.log('error',err)
         next(err);
     }
 }
+
 module.exports = { register, login };

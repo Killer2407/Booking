@@ -1,6 +1,6 @@
 const Room = require('../model/Room.js');
 const Hotel = require('../model/Hotel.js');
-// const { createError } = require('../utils/error')
+const { createError } = require('../utils/error')
 
 const createRoom = async (req, res, next) => {
     const hotelId = req.params.hotelid;
@@ -17,7 +17,7 @@ const createRoom = async (req, res, next) => {
         res.status(200).json(savedRoom)
 
     } catch (err) {
-        next(err)
+        next(err) 
     }
 }
 
