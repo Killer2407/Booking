@@ -1,14 +1,14 @@
 
 
-const Reserve = () => {
+// const Reserve = () => {
 
-    return (
-        <div className="">
-            <div className="reserveContainer">
+//     return (
+//         <div className="">
+//             <div className="reserveContainer">
 
-            </div>
-        </div>
-    )
-}
+//             </div>
+//         </div>
+//     )
+// }
 
-export default Reserve;
+// export default Reserve;
