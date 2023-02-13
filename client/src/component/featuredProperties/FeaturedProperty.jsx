@@ -34,13 +34,13 @@
 // export default FeaturedProperty
 
 import React from 'react'
-import './FeaturedProperty'
+import './FeaturedProperty.css'
 
 function FeaturedProperty() {
     return (
         <div className='featured'>
             <div className="featuredItem">
-                <img src="https://cf.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=e148feeb802ac3d28d1391dad9e4cf1e12d9231f897d0b53ca067bde8a9d3355&o=&s=1"
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                     alt="" className="featuredImg" />
                 <span className="featuredName">Radisson Hotel </span>
                 <span className="featuredCity">Las Vegas</span>
@@ -51,7 +51,7 @@ function FeaturedProperty() {
                 </div>
             </div>
             <div className="featuredItem">
-            <img src = "https://cf.bstatic.com/xdata/images/hotel/max1280x900/215955381.jpg?k=ff739d1d9e0c8e233f78ee3ced82743ef0355e925df8db7135d83b55a00ca07a&o=&hp=1"
+            <img src = "https://images.unsplash.com/photo-1455587734955-081b22074882?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                 alt="" className="featuredImg" />
                 <span className="featuredName">Radisson Hotel </span>
                 <span className="featuredCity">Las Vegas</span>
@@ -62,7 +62,7 @@ function FeaturedProperty() {
                 </div>
         </div>
         <div className="featuredItem">
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/232902339.jpg?k=3947def526b8af0429568b44f9716e79667d640842c48de5e66fd2a8b776accd&o=&hp=1"
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                 alt="" className="featuredImg" />
                 <span className="featuredName">Radisson Hotel </span>
                 <span className="featuredCity">Las Vegas</span>
@@ -84,7 +84,7 @@ function FeaturedProperty() {
                 </div>
         </div>
         <div className="featuredItem">
-            <img src ="https://cf.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=e148feeb802ac3d28d1391dad9e4cf1e12d9231f897d0b53ca067bde8a9d3355&o=&s=1"
+            <img src ="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                 alt="" className="featuredImg" />
                 <span className="featuredName">Radisson Hotel </span>
                 <span className="featuredCity">Las Vegas</span>
