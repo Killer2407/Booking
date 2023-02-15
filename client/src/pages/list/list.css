@@ -18,7 +18,7 @@
     border-radius: 10px;
     position: sticky;
     top: 10px;
-    height: 400px
+    height: max-content;
 }
 
 .listTitle {

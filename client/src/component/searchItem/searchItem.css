@@ -14,3 +14,99 @@
     object-fit: cover;
     border-radius: 5px;
 }
+
+.searchDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
+
+}
+
+.searchTitle {
+    font-size: 20px;
+    color: #0071c2;
+}
+
+.searchDistance {
+    font-size: 12px;
+}
+
+.searchTaxi {
+    font-size: 12px;
+    background-color: #008009;
+    color: white;
+    width: max-content;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.searchSubtitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.searchFeatures {
+    font-size: 12px;
+}
+
+.searchCancel {
+    font-style: 12px;
+    color: #008009;
+    font-weight: bold;
+}
+
+.searchCancelSubtitle {
+    font-style: 12px;
+    color: #008009;
+}
+
+.searchDetails {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.searchRating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchRating>span {
+    font-weight: 500;
+}
+
+.searchRating>button {
+    background-color: #003580;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+.searchDetailsText {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.searchPrice {
+    font-style: 24px;
+}
+
+.searchTax {
+    font-style: 12px;
+    color: gray;
+}
+
+.searchCheckbutton {
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    padding: 10px 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
