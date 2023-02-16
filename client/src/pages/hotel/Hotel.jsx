@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './hotel.css'
 import Navbar from '../../component/navbar/Navbar'
 import Header from '../../component/header/Header'
+import MailList from '../../component/mailList/MailList';
+import Footer from '../../component/footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 const Hotel = () => {
+  const [slide, setSlide] = useState(0);
+  const [open, setOpen] = useState(false);
 
   const photos = [
     {
@@ -28,13 +32,39 @@ const Hotel = () => {
     },
   ];
 
+  const handleOpen = (key) => {
+    setSlide(key);
+    setOpen(true);
+  }
+
+  const handleMove = (direction) => {
+    let newSlideIndex;
+
+    if (direction === "l") {
+      newSlideIndex = slide === 0 ? 5 : slide - 1;
+    } else {
+      newSlideIndex = slide === 5 ? 0 : slide + 1;
+    }
+
+    setSlide(newSlideIndex)
+  }
+
   return (
     <>
       <Navbar />
       <Header type="list" />
       <div className="hotelContainer">
+        {open && <div className="slide">
+          <FontAwesomeIcon icon={faCircleXmark} className="close" onClick={() => setOpen(false)} />
+          <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" onClick={() => handleMove("l")} />
+          <div className="slideWrapper">
+            <img src={photos[slide].src} alt="" className="slideImg" />
+          </div>
+          <FontAwesomeIcon icon={faCircleArrowRight} className="arrow" onClick={() => handleMove("r")} />
+        </div>}
         <div className="hotelWrapper">
-          <div className="hotelTitle">
+          <button className="bookNow">Reserve or Book Now!</button>
+          <h1 className="hotelTitle">Tower</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
               <span>70 Greybarn Long Island</span>
@@ -49,11 +79,29 @@ const Hotel = () => {
               {photos.map((photo, key) => {
                 return (
                   <div className="hotelImageWrapper" key={key}>
-                    {key} <img src={photo.src} alt=" " className="hotelImg" />
+                    <img onClick={() => handleOpen(key)} src={photo.src} alt=" " className="hotelImg" />
                   </div>)
               })}
             </div>
-          </div>
+            <div className="hotelDetails">
+              <div className="hotelDetText">
+                <h1 className='hotelTitle'>Stay in the heart</h1>
+                <p className='hotelDes'>
+                  Located a 5 minute walk from St. Florian's Gate. GreyBarn apartments
+                  has accomodations with air conditioning and free Wifi.
+                </p>
+              </div>
+              <div className="hotelDetPrice">
+                <h1>Perfect for a 9-night stay!</h1>
+                <span> Located in the real heart of Broski. This property has an excellent location score of 9.8!</span>
+                <h2>
+                  <b>$945</b> (9 nights)
+                </h2>
+                <button>Reserve or Book Now!</button>
+              </div>
+            </div>
+          <MailList />
+          <Footer />
         </div>
       </div>
     </>
