@@ -12,24 +12,24 @@ const useFetch = (url) => {
             try {
                 const response = await axios.get(url)
                 setData(response.data)
-            } catch(err) {
+            } catch (err) {
                 setError(err)
             }
             setLoading(false)
         }
-        fetchData(); 
+        fetchData();
 
     }, [url])
 
     const reFetch = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(url)
-            setData(response.data)
-        } catch(err) {
-            setError(err)
+            const response = await axios.get(url);
+            setData(response.data);
+        } catch (err) {
+            setError(err);
         }
-        setLoading(false)
+        setLoading(false);
     }
     return { data, loading, error, reFetch };
 }

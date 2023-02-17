@@ -70,7 +70,7 @@ const countByCity = async (req, res, next) => {
 
 const countByType = async (req, res, next) => {
     try {
-        console.log('Hit from type')
+        // console.log('Hit from type')
         const hotelCount = await Hotel.countDocuments({ type: "hotel" })
         const apartmentCount = await Hotel.countDocuments({ type: "apartment" })
         const resortCount = await Hotel.countDocuments({ type: "resort" })
