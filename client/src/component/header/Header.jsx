@@ -8,6 +8,7 @@ import "react-date-range/dist/theme/default.css";
 import { useNavigate } from 'react-router-dom'
 import './header.css';
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({ type }) => {
     const [destination, setDestination] = useState("");
@@ -36,10 +37,15 @@ const Header = ({ type }) => {
         })
     }
     const {dispatch} = useContext(SearchContext)
+
     const handleSearch = () => {
+
         dispatch({type: "NEW_SEARCH", payload:{destination, dates, options}})
         navigate("/hotels", { state: { destination, dates, options} })
     }
+
+    const {user} = useContext(AuthContext);
+    // console.log('user', user)
 
     return (
         <div className="header">
@@ -69,11 +75,11 @@ const Header = ({ type }) => {
                 {type !== "list" && <>
                     <h1 className="headerTitle">A lifetime of discounts?</h1>
                     <p className="headerDesc">Get rewarded for your travels – unlock instant savings of 10% or more with a free booking account</p>
-                    <button className="headerBtn">Sign In / Register </button>
+                    {!user && <button className="headerBtn">Sign In / Register </button>}
                     <div className="headerSearch">
                         <div className="headerSearchItem">
                             <FontAwesomeIcon icon={faBed} className="headerIcon" />
-                            <input type="text" placeHolder="Where are you going" className="headerSearchInput" onChange={e => setDestination(e.target.value)} />
+                            <input type="text" placeholder="Where are you going" className="headerSearchInput" onChange={e => setDestination(e.target.value)} />
                         </div>
                         <div className="headerSearchItem">
                             <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />

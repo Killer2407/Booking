@@ -51,6 +51,21 @@ const updateRoom = async (req, res, next) => {
     }
 }
 
+// const updateSelectedRooms  = async (req, res, next) => {
+//     try {
+//         console.log('From updateSelectedRoom')
+//         await Room.updateOne({"roomNumbers._id": req.params.id}, {
+//             $push: {
+//                 //if there are nested properties need to use the below syntax with $
+//                 "roomNumbers.$.unavailableDates" : req.body.dates
+//             }
+//         })
+//         res.status(200).json("Room status has been updated")
+//     } catch (err) {
+//         console.log("Error from updateSelectedROom")
+//         next(err)
+//     }
+// }
 const deleteRoom = async (req, res, next) => {
     const hotelId = req.params.hotelid;
     try {
